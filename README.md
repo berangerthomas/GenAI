@@ -46,7 +46,7 @@ cd GenAI
 
 2. Start Docker desktop
 
-3. Using a command line, start the application:
+3. Using a command line, navigate to the app directory, and start the application:
 ```bash
 docker-compose up --build
 ```
