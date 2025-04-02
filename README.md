@@ -4,6 +4,22 @@ A modern, containerized GenAI application that combines Ollama, FastAPI, and Cha
 
 By default, the system uses Paul Graham's essay, which is already included in the Chroma DB database shipped with the program. See below for installation instructions and manual document additions.
 
+
+## Table of Contents
+
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Quick Start](#quick-start)
+- [Architecture](#architecture)
+- [Project Structure](#project-structure)
+- [Components](#components)
+- [Development](#development)
+- [API Endpoints](#api-endpoints)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [Acknowledgments](#acknowledgments)
+
+
 ## Features
 
 - 🤖 Powered by Mistral model
