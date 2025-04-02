@@ -48,10 +48,12 @@ cd GenAI
 
 3. Using a command line, navigate to the app directory, and start the application:
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
-3. Access the application:
+4. Wait for all downloads to finish (this can take a while).
+
+5. Now you can access the application:
 - **Chainlit**: http://localhost:8000
 - Middleware API: http://localhost:8001
 - Ollama API: http://localhost:11434
