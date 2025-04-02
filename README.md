@@ -33,7 +33,7 @@ The application is built with a three-tier architecture:
 
 ## Prerequisites
 
-- Docker and Docker Compose
+- Docker and Docker Compose installed on your computer
 - At least 8GB of RAM (16GB recommended)
 - 2GB of free disk space
 
@@ -41,17 +41,19 @@ The application is built with a three-tier architecture:
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/berangerthomas/GenAI
 cd GenAI
 ```
 
-2. Start the application:
+2. Start Docker desktop
+
+3. Using a command line, start the application:
 ```bash
-docker-compose up -d
+docker-compose up --build
 ```
 
 3. Access the application:
-- Chainlit: http://localhost:8000
+- **Chainlit**: http://localhost:8000
 - Middleware API: http://localhost:8001
 - Ollama API: http://localhost:11434
 
@@ -99,21 +101,9 @@ GenAI/
 
 ## Development
 
-### Building from Source
-
-1. Build individual components:
-```bash
-docker-compose build
-```
-
-2. Start in development mode:
-```bash
-docker-compose up
-```
-
 ### Adding Documents to ChromaDB
 
-1. Place your text documents in the `frontend/data` directory
+1. Place your text documents in a new `frontend/data` directory
 2. Run the ChromaDB creation notebook:
 ```bash
 jupyter notebook frontend/create_chroma.ipynb
@@ -130,17 +120,6 @@ jupyter notebook frontend/create_chroma.ipynb
 
 - `POST /api/chat`: Direct access to Ollama chat completions
 
-## Environment Variables
-
-- `BACKEND_URL`: URL of the Ollama backend (default: http://backend:11434)
-- `OLLAMA_HOST`: Ollama host URL for frontend (default: http://backend:11434)
-
-## Monitoring
-
-The application includes health checks for all services:
-- Backend: Checks Ollama API availability
-- Middleware: Monitors FastAPI endpoints
-- Frontend: Verifies Chainlit server status
 
 ## Troubleshooting
 
