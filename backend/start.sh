@@ -11,7 +11,7 @@ until curl -s http://localhost:11434 > /dev/null; do
 done
 
 # Télécharger le modèle Mistral
-ollama pull tinyllama
+ollama pull mistral
 
 # Garder le conteneur en cours d'exécution
 tail -f /dev/null

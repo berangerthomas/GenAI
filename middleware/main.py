@@ -16,7 +16,7 @@ BACKEND_URL = os.getenv("BACKEND_URL", "http://backend:11434")
 logger.info(f"Using backend URL: {BACKEND_URL}")
 
 # Modèle Ollama à utiliser
-OLLAMA_MODEL = "tinyllama"
+OLLAMA_MODEL = "mistral"
 
 
 class ChatRequest(BaseModel):

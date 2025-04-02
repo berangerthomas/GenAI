@@ -26,14 +26,6 @@ Settings.embed_model = HuggingFaceEmbedding(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
-#########################################
-########       ChromaDB       ###########
-#########################################
-# Define embedding function
-# embedding_function = embedding_functions.SentenceTransformerEmbeddingFunction(
-#     model_name="all-MiniLM-L6-v2"
-# )
-
 # Connect to existing ChromaDB database
 collection_name = "genai"
 chroma_client = chromadb.PersistentClient(path="chroma_db")
@@ -87,7 +79,7 @@ else:
 # define LLM
 llm = Ollama(
     request_timeout=300.0,
-    model="tinyllama",
+    model="mistral",
     base_url="http://middleware:8001",  # URL du middleware
     api_key="not-needed",  # Nécessaire pour la compatibilité avec l'API OpenAI
 )
