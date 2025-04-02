@@ -25,16 +25,14 @@ By default, the system uses Paul Graham's essay, which is already included in th
 - 🤖 Powered by Mistral model
 - 📚 Document retrieval using ChromaDB
 - 💬 Modern chat interface with Chainlit
-- 🔄 Real-time streaming responses
 - 🐳 Fully containerized with Docker
 - 🔍 Semantic search capabilities
-- 📊 Health checks and automatic recovery
 
 ## Prerequisites
 
 - Docker and Docker Compose installed on your computer
 - At least 8GB of RAM (16GB recommended)
-- 2GB of free disk space
+- 8GB of free disk space
 
 ## Quick Start
 
