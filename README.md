@@ -2,24 +2,7 @@
 
 A modern, containerized GenAI application that combines Ollama, FastAPI, and Chainlit to create an intelligent chat interface with document retrieval capabilities.
 
-## Architecture
-
-The application is built with a three-tier architecture:
-
-1. **Backend (Ollama)**
-   - Runs the Mistral model
-   - Handles LLM inference
-   - Exposed on port 11434
-
-2. **Middleware (FastAPI)**
-   - Acts as a proxy between frontend and backend
-   - Handles request/response formatting
-   - Exposed on port 8001
-
-3. **Frontend (Chainlit)**
-   - Provides a modern chat interface
-   - Integrates with ChromaDB for document retrieval
-   - Exposed on port 8000
+By default, the system uses Paul Graham's essay, which is already included in the Chroma DB database shipped with the program. See below for installation instructions and manual document additions.
 
 ## Features
 
@@ -57,6 +40,27 @@ docker-compose up --build
 - Middleware API: http://localhost:8001
 - Ollama API: http://localhost:11434
 
+
+## Architecture
+
+The application is built with a three-tier architecture:
+
+1. **Backend (Ollama)**
+   - Runs the Mistral model
+   - Handles LLM inference
+   - Exposed on port 11434
+
+2. **Middleware (FastAPI)**
+   - Acts as a proxy between frontend and backend
+   - Handles request/response formatting
+   - Exposed on port 8001
+
+3. **Frontend (Chainlit)**
+   - Provides a modern chat interface
+   - Integrates with ChromaDB for document retrieval
+   - Exposed on port 8000
+
+   
 ## Project Structure
 
 ```
