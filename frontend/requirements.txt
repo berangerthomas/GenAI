@@ -1,0 +1,10 @@
+chainlit
+llama-index
+llama-index-core
+llama-index-llms-ollama
+llama-index-embeddings-huggingface
+llama-index-vector-stores-chroma
+chromadb
+PyPDF2
+sentence-transformers
+numpy

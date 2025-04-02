@@ -1,0 +1,66 @@
+version: '3'
+
+services:
+  # backend Ollama
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "11434:11434"
+    volumes:
+      - backend:/root/.ollamabackend
+    networks:
+      - ai-network
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:11434/api/tags" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # middleware FastAPI
+  middleware:
+    build:
+      context: ./middleware
+      dockerfile: Dockerfile
+    container_name: middleware
+    ports:
+      - "8001:8001"
+    environment:
+      - BACKEND_URL=http://backend:11434
+    networks:
+      - ai-network
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # frontend Chainlit
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./frontend:/app
+    environment:
+      - OLLAMA_HOST=http://backend:11434
+    networks:
+      - ai-network
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+networks:
+  ai-network:
+    driver: bridge
+
+volumes:
+  backend:
+    driver: local
