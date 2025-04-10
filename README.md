@@ -2,7 +2,7 @@
 
 A modern, containerized GenAI application that combines Ollama, FastAPI, and Chainlit to create an intelligent chat interface with document retrieval capabilities.
 
-By default, the system uses Paul Graham's essay, which is already included in the Chroma DB database shipped with the program. See below for installation instructions and manual document additions.
+By default, the system scans the frontend/data directory and adds or updates a Chroma_db database. A small text file is provided in the data directory. This is an extract from a Wikipedia page.
 
 
 ## Table of Contents
@@ -13,7 +13,6 @@ By default, the system uses Paul Graham's essay, which is already included in th
 - [Architecture](#architecture)
 - [Project Structure](#project-structure)
 - [Components](#components)
-- [Development](#development)
 - [API Endpoints](#api-endpoints)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
@@ -22,7 +21,7 @@ By default, the system uses Paul Graham's essay, which is already included in th
 
 ## Features
 
-- 🤖 Powered by Mistral model
+- 🤖 Powered by TinyLlama model
 - 📚 Document retrieval using ChromaDB
 - 💬 Modern chat interface with Chainlit
 - 🐳 Fully containerized with Docker
@@ -101,7 +100,7 @@ GenAI/
 ### Backend (Ollama)
 
 - Uses the official Ollama image
-- Runs Mistral model
+- Runs TinyLlama model
 - Handles LLM inference requests
 - Persists model data using Docker volumes
 
@@ -118,16 +117,6 @@ GenAI/
 - Integrates with ChromaDB for document retrieval
 - Uses sentence-transformers for embeddings
 - Implements streaming responses
-
-## Development
-
-### Adding Documents to ChromaDB
-
-1. Place your text documents in a new `frontend/data` directory
-2. Run the ChromaDB creation notebook:
-```bash
-jupyter notebook frontend/create_chroma.ipynb
-```
 
 ## API Endpoints
 
