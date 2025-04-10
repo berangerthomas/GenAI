@@ -47,7 +47,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./frontend:/app
+      - ./frontend/chroma_db:/app/chroma_db
     environment:
       - OLLAMA_HOST=http://backend:11434
     networks:

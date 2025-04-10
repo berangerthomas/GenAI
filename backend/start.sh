@@ -10,8 +10,9 @@ until curl -s http://localhost:11434 > /dev/null; do
     sleep 5
 done
 
-# Télécharger le modèle Mistral
-ollama pull mistral
+# Télécharger le modèle Mistral ou TinyLlama
+# ollama pull Mistral
+ollama pull TinyLlama
 
 # Garder le conteneur en cours d'exécution
 tail -f /dev/null

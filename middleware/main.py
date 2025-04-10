@@ -15,8 +15,9 @@ app = FastAPI()
 BACKEND_URL = os.getenv("BACKEND_URL", "http://backend:11434")
 logger.info(f"Using backend URL: {BACKEND_URL}")
 
-# Modèle Ollama à utiliser
-OLLAMA_MODEL = "mistral"
+# Modèle Ollama à utiliser Mistral ou TinyLlama
+# OLLAMA_MODEL = "Mistral"
+OLLAMA_MODEL = "TinyLlama"
 
 
 class ChatRequest(BaseModel):
@@ -31,7 +32,7 @@ class ChatResponse(BaseModel):
 
 @app.get("/")
 async def root():
-    return {"message": "Please use the /chat/completions endpoint to get chat response"}
+    return {"message": "Please use the /api/chat endpoint to get chat response"}
 
 
 @app.post("/api/chat")
@@ -48,9 +49,12 @@ async def api_chat(request: ChatRequest):
         response = requests.post(
             f"{BACKEND_URL}/api/chat",
             json={
-                "model": OLLAMA_MODEL,  # Forcer l'utilisation de notre modèle
+                "model": OLLAMA_MODEL,
                 "messages": ollama_messages,
                 "stream": False,
+                "options": {
+                    "num_ctx": 2048  # Augmenter le contexte (max 32768 pour Mistral)
+                },
             },
         )
 

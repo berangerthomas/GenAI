@@ -7,3 +7,5 @@ llama-index-vector-stores-chroma
 chromadb
 sentence-transformers
 numpy
+transformers
+hf_xet
