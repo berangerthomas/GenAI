@@ -2,8 +2,10 @@
 
 A modern, containerized GenAI application that combines Ollama, FastAPI, and Chainlit to create an intelligent chat interface with document retrieval capabilities.
 
-By default, the system scans the frontend/data directory and adds or updates a Chroma_db database. A small text file is provided in the data directory. This is an extract from a Wikipedia page.
+By default, the system scans the frontend/data directory and adds or updates a Chroma_db database. A small text file is provided in the data directory. It contains an extract from [this Wikipedia article](https://fr.wikipedia.org/wiki/Politique_commerciale_de_la_seconde_administration_Trump).
 
+## Example
+![demo picture](https://github.com/berangerthomas/GenAI/.github/demo.jpg)
 
 ## Table of Contents
 
