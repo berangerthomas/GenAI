@@ -5,7 +5,7 @@ A modern, containerized GenAI application that combines Ollama, FastAPI, and Cha
 By default, the system scans the frontend/data directory and adds or updates a Chroma_db database. A small text file is provided in the data directory. It contains an extract from [this Wikipedia article](https://fr.wikipedia.org/wiki/Politique_commerciale_de_la_seconde_administration_Trump).
 
 ## Example
-![demo picture](https://github.com/berangerthomas/GenAI/.github/demo.jpg)
+![demo picture](.github/demo.jpg)
 
 ## Table of Contents
 
